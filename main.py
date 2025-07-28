@@ -136,9 +136,9 @@ def send_duml(s, source, target, cmd_type, cmd_set, cmd_id, payload = None):
                 result.append(port)
             except (OSError, serial.SerialException):
                 pass
-            except serial.SerialException as e:
-                print('Could not open serial port:', e)
-                exit(1)
+    except serial.SerialException as e:
+        print('Could not open serial port:', e)
+        exit(1)
 
 # Process input (min 364, center 1024, max 1684) -> (min 0, center 16384, max 32768)
 def parseInput(input, name):
